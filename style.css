@@ -323,7 +323,7 @@ section#hero button.slick-arrow.slick-prev {
     width: 100%;
     /* border: 1px solid; */
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
@@ -390,30 +390,46 @@ section#hero button.slick-arrow.slick-prev {
 
 .trending-news-large-container .other-trends {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .trending-news-large-container .other-trends .trend {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
     justify-content: center;
     height: 150px;
+    width: 100%;
     overflow: hidden;
 }
 
-.trending-news-large-container .other-trends .trend p {
+.trending-news-large-container .other-trends .trend .content {
+    flex: 1 0 ;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+.trending-news-large-container .other-trends .trend .content p {
     font-size: 14px;
 }
 
 .trending-news-large-container .other-trends .trend .image-container {
-    width: 100%;
+    height: 100%;
     aspect-ratio: 1;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
 
+.trending-news-large-container .other-trends .trend .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
