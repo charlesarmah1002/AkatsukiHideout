@@ -8,6 +8,7 @@ section {
     margin-block-end: 30px;
     max-width: var(--max-width);
     margin-inline: auto;
+    padding-inline: 15px;
 }
 
 /* removing the x from the search button */
@@ -18,20 +19,24 @@ section {
 
 /*  */
 
+/* for small p tags */
+.mini-p {
+    font-size: 12px;
+    font-weight: 300;
+}
+/*  */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     background: var(--blue);
     color: white;
     font-family: 'Poppins', sans-serif;
-}
-
-main {
-    padding-inline: 15px;
 }
 
 /* header designing start */
@@ -225,12 +230,17 @@ section#hero {
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    width: 150px;
+    width: 130px;
     color: var(--blue);
     height: 35px;
     text-decoration: none;
     font-weight: 500;
     border-radius: 50px;
+    transition: width 0.3s;
+}
+
+.readmore-btn:hover {
+    width: 150px;
 }
 
 /* slick design changes */
@@ -289,9 +299,14 @@ section#hero button.slick-arrow.slick-prev {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-inline: 5px;
+    padding: 5px;
     text-decoration: none;
     color: inherit;
+    transition: background 0.3s;
+}
+
+.latest-news .card:hover {
+    border-radius: 0 !important;
 }
 
 .latest-news .card .image-container {
@@ -339,6 +354,8 @@ section#hero button.slick-arrow.slick-prev {
     aspect-ratio: 1;
     border-radius: 10px;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
 }
 
 .trending-news-large-container .main-item::after {
@@ -401,16 +418,27 @@ section#hero button.slick-arrow.slick-prev {
     align-items: stretch;
     gap: 10px;
     justify-content: center;
-    height: 150px;
+    height: 170px;
     width: 100%;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s,
+                border-radius 0.4s;
+    padding: 10px;
+}
+
+.trending-news-large-container .other-trends .trend:hover,
+.latest-news .card:hover {
+    background: #ffffff20;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
 }
 
 .trending-news-large-container .other-trends .trend .content {
     flex: 1 0 ;
     height: 100%;
     overflow: hidden;
-    border: 1px solid;
 }
 
 .trending-news-large-container .other-trends .trend .content p {
@@ -432,4 +460,110 @@ section#hero button.slick-arrow.slick-prev {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* banner for social media links */
+section#banner {
+    background: url('src/wind\ breaker\ -\ ending.jpeg') #00000050;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: none !important;
+}
+
+section#banner h3 {
+    font-size: 75px;
+    font-weight: 400;
+    text-align: center;
+}
+
+section#banner .links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+}
+
+section#banner .links li a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff80;
+    backdrop-filter: blur(30px),
+                    brightness(15px);
+    border-radius: 10px;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+section#banner .links li a:hover {
+    background: #ffffff;
+}
+
+/* reels section design */
+section#reels .active-reel {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+section#reels .active-reel .content {
+    flex: 1 0 100px;
+    max-width: 300px;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section#reels .active-reel .video-player {
+    flex: 1 0 450px;
+    width: min(100%, 550px);
+    aspect-ratio: 16/9;
+    background: black;
+    overflow: hidden;
+}
+
+section#reels .active-reel .video-player img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.other-reels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.other-reels .reel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: black;
+    overflow: hidden;
+}
+
+.other-reels .reel .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
